@@ -1,0 +1,28 @@
+{
+  "name": "wnpm",
+  "version": "1.0.0",
+  "description": "Webit Node Package Manager",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "wnpm": "dist/index.js",
+    "wnpx": "dist/wnpx.js"
+  },
+  "scripts": {
+    "clean": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc",
+    "link-local": "bash scripts/link-local.sh",
+    "start": "npm run build && node dist/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "multer": "^2.2.0",
+    "tar-stream": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/multer": "^2.2.0",
+    "@types/node": "^26.1.1",
+    "@types/tar-stream": "^3.1.4",
+    "typescript": "^5.9.3"
+  }
+}

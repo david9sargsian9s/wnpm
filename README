@@ -1,0 +1,551 @@
+<div align="center">
+
+<img src="./wnpm-logo.png" width="128" alt="WNPM Logo">
+
+# WNPM
+
+### Official Package Manager & Scripting Engine for the WNL Ecosystem
+
+Built for **WLite**, designed for the **WNL (Web Native Layer)** architecture, and fully capable of running as a standalone native CLI package manager.
+
+<br>
+
+![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2023-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Google Drive](https://img.shields.io/badge/Google%20Drive-API-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Compatible-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+
+<br>
+
+![Cross Platform](https://img.shields.io/badge/Cross_Platform-Linux%20%7C%20macOS%20%7C%20Windows-success?style=for-the-badge)
+![CLI](https://img.shields.io/badge/CLI-Ready-blue?style=for-the-badge)
+![VFS](https://img.shields.io/badge/Virtual_File_System-WNL-important?style=for-the-badge)
+![npm Registry](https://img.shields.io/badge/npm-Registry-CB3837?style=for-the-badge&logo=npm)
+![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+</div>
+
+---
+
+# WNPM
+
+WNPM is the official package manager and scripting engine of the **WNL (Web Native Layer)** ecosystem.
+
+It was originally developed for **WLite**, where it operates entirely inside a virtual operating environment, but it can also be used as a fully standalone CLI package manager for native Node.js projects.
+
+Unlike traditional package managers, WNPM is designed around a **Virtual File System (VFS)**. Packages can be downloaded, extracted, indexed, and executed without relying on a conventional project directory structure. Depending on the execution mode, WNPM either works entirely inside the isolated WNL storage or behaves like a lightweight bridge to the public npm ecosystem.
+
+Its architecture combines package management, archive extraction, dependency resolution, script execution, and temporary runtime environments into a single unified engine.
+
+---
+
+# ⚠ Integration Notice
+
+## WLite
+
+WNPM is already fully integrated into **WLite**.
+
+There is **nothing to install or configure**. Every WLite instance already includes the complete package manager, WNPX runtime, dependency resolver, and package registry integration.
+
+Do **not** install WNPM inside WLite again.
+
+---
+
+## Webit
+
+Future versions of **Webit** will also include WNPM by default.
+
+Just like WLite, the package manager will already be available as part of the operating environment.
+
+---
+
+## Standalone Mode
+
+Outside of the WNL ecosystem, WNPM can also operate as a completely independent CLI application.
+
+This makes it useful as:
+
+- a lightweight alternative to npm
+- a package downloader
+- a TGZ archive extractor
+- an emergency package installer
+- a CLI runner through WNPX
+- a scripting engine
+- a dependency inspector
+
+When executed natively, WNPM either downloads packages directly from the official npm Registry API or delegates execution to the locally installed Node.js/npm environment whenever native execution is more appropriate.
+
+---
+
+# Features
+
+- Native integration with the WNL Virtual File System (VFS)
+- Direct package downloads from the official npm Registry
+- Built-in WNPX runtime
+- Automatic package.json generation
+- Automatic dependency management
+- Local and global installations
+- Google Drive virtual storage support
+- MongoDB virtual storage support
+- Binary package execution
+- Cross-platform CLI
+- Linux, macOS and Windows support
+- Automatic project initialization
+- Temporary execution environments
+- Self-creating directory architecture
+- Automatic module extraction
+- TAR / TGZ archive processing
+- Native Node.js compatibility
+- Virtual isolated package execution
+- Zero configuration inside WLite
+
+---
+
+# Core Capabilities
+
+## Native VFS Integration
+
+All packages are downloaded, unpacked and stored inside the WNL Virtual File System without directly modifying the host operating system.
+
+Depending on the selected storage backend, modules may exist entirely inside MongoDB, Google Drive or another virtual provider.
+
+---
+
+## Direct npm Registry Access
+
+WNPM communicates directly with the official npm Registry API.
+
+Package metadata is requested in real time before downloading the corresponding compressed archive (.tgz).
+
+No mirrors or third-party registries are required.
+
+---
+
+## Built-in WNPX
+
+The integrated **WNPX** runtime allows packages to be executed without manually installing them into the current project.
+
+If a requested package does not exist locally, WNPX automatically creates a temporary runtime environment, downloads the package, resolves its dependencies and immediately transfers execution to its CLI entry point.
+
+---
+
+## package.json Management
+
+WNPM automatically creates, updates and maintains project manifests.
+
+Dependencies and devDependencies are synchronized during installation and removal operations without requiring manual editing.
+
+---
+
+## Self-Creating Architecture
+
+WNPM automatically creates missing project components whenever required.
+
+This includes:
+
+- package.json
+- virtual directories
+- dependency trees
+- module storage
+- temporary execution environments
+- internal metadata
+
+No manual initialization beyond the project entry point is required.
+
+---
+
+# Installation
+
+## Using WLite
+
+No installation is required.
+
+WNPM is already bundled with every WLite installation.
+
+Simply open the WLite terminal and start using:
+
+```bash
+wnpm
+```
+
+or
+
+```bash
+wnpx
+```
+
+---
+
+## Native CLI Installation
+
+When using WNPM outside WLite, no global npm package is required.
+
+The repository already contains installation scripts inside the **scripts/** directory.
+
+Simply execute the appropriate script for your operating system.
+
+### Linux / macOS
+
+Run:
+
+```bash
+scripts/install.sh
+```
+
+This script will:
+
+- create `~/.local/bin` if necessary;
+- make the CLI executables runnable;
+- create symbolic links for `wnpm` and `wnpx`;
+- register both commands globally for the current user.
+
+### Linux / macOS
+
+The repository already contains the required installation script.
+
+Run:
+
+```bash
+chmod +x scripts/install.sh
+./scripts/install.sh
+```
+
+The script automatically:
+
+- creates the `~/.local/bin` directory if necessary;
+- makes the CLI executables executable;
+- creates symbolic links for `wnpm` and `wnpx`;
+- registers both commands for the current user.
+
+<details>
+<summary>View installation script</summary>
+
+```bash
+#!/bin/bash
+
+# Create the ~/.local/bin folder if it doesn't exist
+mkdir -p ~/.local/bin
+
+# Get the absolute path to the project folder
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Make files executable
+chmod +x "$PROJECT_DIR/dist/index.js"
+chmod +x "$PROJECT_DIR/dist/wnpx.js"
+
+# Recreate symlinks
+ln -sf "$PROJECT_DIR/dist/index.js" ~/.local/bin/wnpm
+ln -sf "$PROJECT_DIR/dist/wnpx.js" ~/.local/bin/wnpx
+
+echo "✅ [wnpm] wnpm and wnpx commands are bound to ~/.local/bin!"
+```
+
+</details>
+
+---
+
+### Windows
+
+The repository also includes an installation script for Windows.
+
+Run:
+
+```bat
+scripts\install.bat
+```
+
+The script automatically:
+
+- creates `%USERPROFILE%\.local\bin` if it does not already exist;
+- generates Windows command wrappers for `wnpm` and `wnpx`;
+- binds both commands for native CLI usage.
+
+> **Note**
+>
+> Make sure `%USERPROFILE%\.local\bin` is included in your **PATH** environment variable.
+
+<details>
+<summary>View installation script</summary>
+
+```bat
+@echo off
+...
+```
+
+</details>
+
+---
+
+## Verify Installation
+
+After running the installation script, restart your terminal and execute:
+
+```bash
+wnpm --version
+```
+
+or
+
+```bash
+wnpx --help
+```
+
+If the commands execute successfully, WNPM has been installed correctly and is ready for native CLI usage.
+
+---
+
+# CLI Commands
+
+WNPM provides a familiar command-line interface inspired by the npm ecosystem while operating entirely within the WNL runtime or as a standalone native CLI.
+
+| Command | Alias | Description |
+|----------|-------|-------------|
+| `wnpm init` | — | Creates a new `package.json` manifest in the current directory. |
+| `wnpm install <package>` | `wnpm i` | Downloads and installs a package from the npm Registry. |
+| `wnpm install -g <package>` | — | Installs a package globally into the WNL system directory. |
+| `wnpm uninstall <package>` | `wnpm rm` | Removes an installed package and updates the project manifest. |
+| `wnpm list` | `wnpm ls` | Displays the dependency tree of the current project. |
+| `wnpx <package> [args]` | — | Downloads (if necessary) and immediately executes a CLI package. |
+
+---
+
+## Examples
+
+Initialize a new project
+
+```bash
+wnpm init
+```
+
+Install a package
+
+```bash
+wnpm install express
+```
+
+Using the short alias
+
+```bash
+wnpm i express
+```
+
+Install a package globally
+
+```bash
+wnpm install -g typescript
+```
+
+Remove a dependency
+
+```bash
+wnpm rm express
+```
+
+List installed dependencies
+
+```bash
+wnpm ls
+```
+
+Execute a package without installing it permanently
+
+```bash
+wnpx create-vite my-app
+```
+
+Run a CLI package with custom arguments
+
+```bash
+wnpx eslint src --fix
+```
+
+---
+
+# Architecture & Operation
+
+Unlike traditional package managers that operate directly on the host file system, WNPM is designed around a modular execution pipeline capable of working both inside the WNL Virtual File System and in a native Node.js environment.
+
+Every package installation passes through a series of well-defined stages that ensure consistent package resolution, extraction, dependency management and runtime execution.
+
+```
+User Command
+      │
+      ▼
+ Resolve Package Metadata
+      │
+      ▼
+  npm Registry API
+      │
+      ▼
+ Download .tgz Archive
+      │
+      ▼
+  Stream Extraction
+      │
+      ▼
+ Build Virtual File Tree
+      │
+      ▼
+ Update package.json
+      │
+      ▼
+ Store Package
+(MongoDB / Google Drive / Native)
+      │
+      ▼
+ Ready for Execution
+```
+
+---
+
+## Package Resolution
+
+When a package is requested, WNPM first communicates with the official npm Registry API.
+
+The latest package metadata is retrieved, including available versions, dependencies, integrity hashes and the direct download URL of the compressed archive.
+
+Only official registry metadata is used.
+
+---
+
+## Archive Download
+
+After resolving package information, WNPM downloads the corresponding `.tgz` archive.
+
+Instead of relying on manual extraction, the archive is processed as a binary stream, allowing packages to be unpacked efficiently while preserving their complete directory structure.
+
+---
+
+## Virtual File System
+
+Inside WLite, extracted files are not written directly to the operating system.
+
+Instead, WNPM reconstructs the package as a hierarchy of Virtual File System nodes.
+
+This allows packages to exist entirely inside the isolated WNL environment while remaining fully accessible to the runtime.
+
+Depending on the configured backend, package data can be stored in:
+
+- MongoDB
+- Google Drive
+- Native storage
+
+---
+
+## Dependency Management
+
+After extraction, WNPM analyzes the package manifest and synchronizes project dependencies.
+
+If required, the engine automatically creates:
+
+- `package.json`
+- dependency records
+- virtual module directories
+- internal metadata
+- temporary runtime structures
+
+No manual configuration is required.
+
+---
+
+## WNPX Runtime
+
+WNPX extends WNPM with temporary package execution.
+
+When a requested executable is not available locally, WNPX automatically:
+
+1. downloads the requested package;
+2. resolves its dependencies;
+3. creates an isolated execution environment;
+4. locates the executable entry point;
+5. transfers execution;
+6. removes temporary resources when execution finishes.
+
+This enables one-time execution without permanently installing packages.
+
+---
+
+## Native Execution
+
+Outside the WNL ecosystem, WNPM behaves as a standalone CLI package manager.
+
+Native execution allows WNPM to interact directly with the local Node.js runtime while continuing to use the same package resolution pipeline.
+
+This makes WNPM suitable for everyday development workflows, emergency package recovery and standalone archive extraction.
+
+---
+
+## Storage Providers
+
+The storage layer is intentionally abstract.
+
+Current implementations support:
+
+- Google Drive
+- MongoDB
+- Local filesystem
+
+Additional storage providers can be integrated without changing the package manager itself.
+
+---
+
+# Compatibility
+
+WNPM is designed to operate across multiple environments while maintaining a consistent command-line experience.
+
+| Environment | Status |
+|-------------|--------|
+| WLite | ✅ Fully Integrated |
+| WNL | ✅ Supported |
+| Native Node.js | ✅ Supported |
+| Linux | ✅ Supported |
+| macOS | ✅ Supported |
+| Windows | ✅ Supported |
+| Google Drive Storage | ✅ Supported |
+| MongoDB Storage | ✅ Supported |
+| npm Registry | ✅ Supported |
+| Webit | 🚧 Planned Integration |
+
+The standalone CLI shares the same package resolution pipeline as the WNL runtime, making it suitable for both native development and virtual operating environments.
+
+---
+
+# Project Structure
+
+```
+.
+├── dist/               # Compiled CLI binaries
+├── node_modules/
+├── scripts/            # Native installation scripts
+├── src/                # Source code
+├── package.json
+├── tsconfig.json
+├── README.md
+└── LICENSE
+```
+
+The repository is intentionally organized around a modular architecture, separating the CLI runtime, package resolution logic, installation scripts and platform-specific integrations.
+
+---
+
+# License
+
+WNPM uses a dual-license model.
+
+The source code is available under the MIT License:
+
+---
+
+# License
+
+WNPM source code is licensed under the MIT License.
+
+The WNL ecosystem identity, trademarks, branding, and official naming are additionally protected by the WNL Ecosystem License.
+
+See:
+
+- `LICENSE` — MIT License (source code)
+- `WNL-LICENSE` — WNL Ecosystem Trademark & Distribution License
+
+---
