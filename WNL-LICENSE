@@ -1,0 +1,136 @@
+WNL ECOSYSTEM TRADEMARK & DISTRIBUTION LICENSE
+(WNL-LICENSE)
+
+Version 1.0
+July 2026
+
+
+1. PURPOSE
+
+This License supplements the MIT License and governs the official identity of the WNL Ecosystem.
+
+Nothing contained in this License replaces, modifies, or restricts any rights granted by the MIT License regarding the source code.
+
+This License exists solely to protect the trademarks, branding, official naming, architectural identity, and public representation of the WNL Ecosystem.
+
+
+2. OFFICIAL WNL ECOSYSTEM
+
+The following software projects are recognized as official core components of the WNL Ecosystem:
+
+    • WNL
+    • WNL Systems
+    • WLite
+    • WLite Engine
+    • WNPM
+    • WNPM Engine
+    • WNPX
+    • Webit
+
+These projects constitute a unified software ecosystem and are considered non-separable architectural components of WNL Systems.
+
+Neither WLite, Webit, nor other official ecosystem components may be represented, advertised, marketed, or redistributed as independent original platforms separate from the WNL Ecosystem.
+
+Standalone usage of individual components such as WNPM under their respective open-source license does not constitute independent ecosystem ownership.
+
+
+3. DERIVATIVE SOFTWARE
+
+Any software, application, framework, operating environment, distribution, module, package, extension, service, or other software product created by modifying, extending, integrating with, or building directly upon the source code of WNL Ecosystem components, including but not limited to WLite, WNPM, and Webit, shall be considered a derivative distribution of the respective WNL subsystem.
+
+Derivative software may be modified, redistributed, and commercially used under the terms of the MIT License.
+
+However, derivative software does not become an official component of the WNL Ecosystem and acquires no ownership, representation, endorsement, or affiliation rights regarding WNL Systems.
+
+
+4. WNL TRADEMARKS
+
+The following names are exclusive trademarks and identifiers of the WNL Ecosystem:
+
+    WNL
+    WNL Systems
+    WNL Ecosystem
+    WNL Project
+    WLite
+    WLite Engine
+    WNPM
+    WNPM Engine
+    WNPX
+    Webit
+
+This protection also extends to all official logos, icons, ".ico" files, visual identity, graphical assets, documentation branding, and any other distinctive branding elements associated with the WNL Ecosystem.
+
+The MIT License grants no permission to use any WNL trademark.
+
+
+5. TRADEMARK USE
+
+Without prior written permission from the WNL project maintainers, no person or organization may:
+
+• publish software using any official WNL trademark as the project name;
+
+• advertise, promote, market, endorse, or commercially represent any software using the names "WNL", "WNL Systems", "WNL Ecosystem", "WNL Project", "WLite", "WLite Engine", or "Webit";
+
+• imply that any derivative software is officially developed, certified, maintained, approved, sponsored, or endorsed by WNL Systems;
+
+• use official WNL logos, icons, visual identity, documentation branding, or other trademarked assets;
+
+• represent derivative software as an official WNL product;
+
+• commercially exploit the WNL brand or any confusingly similar designation.
+
+The right to modify or redistribute software under the MIT License does not include the right to use WNL trademarks.
+
+
+6. DISTRIBUTION REQUIREMENTS
+
+Any derivative distribution shall:
+
+(a) use its own independent project name;
+
+(b) use its own branding and visual identity;
+
+(c) clearly identify itself as an independent derivative distribution;
+
+(d) not represent itself as an official WNL project.
+
+(e) remove all official WNL logos, icons, and branding assets from the distribution, replacing them with the derivative project's own visual identity.
+
+Documentation accompanying a derivative distribution should include a notice substantially similar to the following:
+
+"This project is an independent distribution based on a WNL Ecosystem component, including WLite, WNPM, or Webit. It is not developed, maintained, certified, endorsed, sponsored, or officially affiliated with WNL Systems."
+
+
+7. COMMERCIAL DISTRIBUTION
+
+Commercial use of software derived from WNL Ecosystem components is permitted under the MIT License.
+
+However, no commercial use authorizes the use of WNL trademarks for advertising, marketing, product naming, promotion, endorsement, certification, branding, or commercial representation.
+
+Derivative software intended for commercial use must always be distributed under its own independent name and branding.
+
+
+8. DISCLAIMER
+
+The WNL project maintainers provide the WNL Ecosystem and its branding without warranty of any kind and assume no responsibility or liability for any third-party forks, derivative software, distributions, modifications, packages, or independently maintained projects based upon WNL Ecosystem components.
+
+Responsibility for such software rests solely with its respective maintainers.
+
+
+9. RELATIONSHIP WITH THE MIT LICENSE
+
+The MIT License governs the source code.
+
+This License governs only:
+
+• trademarks;
+
+• branding;
+
+• official naming;
+
+• ecosystem identity;
+
+• public representation.
+
+Nothing contained herein shall be interpreted as restricting any permissions granted by the MIT License regarding the source code itself.
